@@ -19,7 +19,6 @@ class DatabaseHandler():
 
         return self.database.query(clean_query)
         
-        
     def send_execute(self, sql):
         # Do SQL santizition here
         clean_query = sql

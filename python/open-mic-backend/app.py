@@ -1,11 +1,9 @@
 from .flask_server import FlaskServer
-from .database_handler import DatabaseHandler
 
 class App():
 
   def __init__(self):
-    self.db_handler = DatabaseHandler()
-    self.flask_server = FlaskServer(self.db_handler)
+    self.flask_server = FlaskServer()
 
   def start(self):
     server_ip = "0.0.0.0"

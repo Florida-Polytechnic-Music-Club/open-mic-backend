@@ -17,10 +17,9 @@ class FlaskServer:
      {'token': 'token_val'}
     
     """
-    def __init__(self, db_handler):
+    def __init__(self):
         self.app = Flask(__name__)
         self.auth_handler = AuthHandler()
-        self.db_handler
 
         self._setup_routes()
 

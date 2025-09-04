@@ -12,8 +12,13 @@ class Database:
     def __init__(self, db_name, user, password, host, port):
         dsn = f"dbname={db_name} user={user} password={password} host={host} port={port}"
         if not hasattr(self, "connection"):  # initialize only once
-            self.connection = psycopg2.connect(dsn)
-            self.cursor = self.connection.cursor()
+            try:
+                self.connection = psycopg2.connect(dsn)
+                self.cursor = self.connection.cursor()
+            except psycopg2.OperationalError as e:
+                print("ERROR: Database connection could not be established! Error Message:")
+                print(e)
+
 
     # Example: query("SELECT * FROM users WHERE id = %s", (1,))
     def query(self, sql, params=None):
