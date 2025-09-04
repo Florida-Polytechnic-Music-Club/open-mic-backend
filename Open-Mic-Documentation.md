@@ -9,7 +9,8 @@
   - Add Performance
   - Delete Performance
   - Swap Performance slots
-  - Edit Performance details 
+  - Edit Performance details
+  - Start event
   - Block all Performance Requests
 
 # Application Tech Stack
